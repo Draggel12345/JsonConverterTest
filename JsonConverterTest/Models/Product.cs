@@ -1,4 +1,6 @@
 ﻿using System;
+using JsonConverterTest.Service;
+using Newtonsoft.Json;
 
 namespace JsonConverterTest.Models
 {
@@ -7,6 +9,7 @@ namespace JsonConverterTest.Models
         private static int idCounter = 0;
         public int Id { get; set; }
         public string ProductName { get; set; }
+        [JsonConverter(typeof(DateFormatConverter), "yyyy-MM-dd")]
         public DateTime ExpiryDate { get; set; }
         public decimal Price { get; set; }
         public Product(string name, DateTime expier, decimal price) => (Id, ProductName, ExpiryDate, Price) = (++idCounter, name, expier, price);
