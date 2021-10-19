@@ -24,7 +24,7 @@ namespace JsonConverterTest.Service
                 Object output = JsonConvert.DeserializeObject<Object>(str);
                 return output;
             }
-            catch (Exception)
+            catch
             {
                 throw new NullReferenceException();
             }

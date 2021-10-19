@@ -9,7 +9,6 @@ namespace JsonConverterTest.Models
         public string ProductName { get; set; }
         public DateTime ExpiryDate { get; set; }
         public decimal Price { get; set; }
-
         public Product(string name, DateTime expier, decimal price) => (Id, ProductName, ExpiryDate, Price) = (++idCounter, name, expier, price);
         public override string ToString()
         {
